@@ -17,7 +17,7 @@ Please use these figures responsibly and solely at your own discretion. They sho
 Clone this repository to your local machine and install the required packages.
 
 ```bash
-git clone https://github.com/orsk-moscow/openai.git
+git clone git@gitlab.zvq.me:datascience/openai.git
 cd openai
 pip install -r requirements.txt
 ```
@@ -32,14 +32,12 @@ touch .env && echo "OPENAI_API_KEY=<your-api-key>" >> .env
 
 You can interact with the OpenAI API using the provided Python scripts. Here is an example of how to use the token counter:
 
-```bash
-python token_counter.py "your-prompt-here"
-```
-
 ```python
+from tokenizer import OpenAITokenCounter
+
 if __name__ == "__main__":
     # Instantiate the class with a model name
-    token_counter = OpenAITokenCounter('gpt-3')
+    token_counter = OpenAITokenCounter("gpt-3.5-turbo")
 
     # Use the class method to count the tokens in a text
     text = "This is a sample sentence for token counting."
